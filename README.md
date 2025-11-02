@@ -119,3 +119,16 @@ English.",
 
 
 
+```bash
+python3 - << 'PY'
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="Qwen/Qwen2.5-7B-Instruct",
+    local_dir="hf_models/qwen2.5-7b-instruct",
+    local_dir_use_symlinks=False
+)
+PY
+
+
+
