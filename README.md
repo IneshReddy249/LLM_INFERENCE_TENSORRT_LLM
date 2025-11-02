@@ -18,7 +18,6 @@
 - 📊 Measures **TTFT**, **latency**, **TPS**, and **GPU utilization**  
 - 🔥 Built for **Qwen2.5-7B-Instruct**, optimized on **NVIDIA A100 (80 GB)**  
 - 🧩 Integrates **FP16 precision**, **paged KV cache**, **context FMHA**, and **inflight batching**  
-- 🐳 100% containerized using **NVIDIA TensorRT-LLM Docker image**
 
 ---
 
@@ -32,16 +31,6 @@ To reduce inference latency and maximize throughput for large-language models (L
 
 **Hardware:**  
 NVIDIA A100 80 GB GPU · CUDA 12.9 · TensorRT-LLM v0.20.0
-
-## 🧩 Software & Installation
-
-### 🖥️ System Requirements
-- **Operating System:** Linux (Ubuntu 20.04 or later recommended)
-- **GPU:** NVIDIA A100 (80 GB) or equivalent with CUDA Compute Capability ≥ 8.0
-- **Memory:** Minimum 32 GB RAM
-- **Disk Space:** ~50 GB (for model weights + engines)
-- **Internet Access:** Required for Hugging Face model download
-
 
 ---
 
