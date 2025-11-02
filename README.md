@@ -38,7 +38,7 @@ NVIDIA A100 80 GB GPU • CUDA 12.9 • TensorRT-LLM v0.20.0
 └── .gitignore
 
 
-⚙️ Environment Setup
+## ⚙️ Environment Setup
 1️⃣ Start Container
 
 docker run --gpus all -it --rm \
