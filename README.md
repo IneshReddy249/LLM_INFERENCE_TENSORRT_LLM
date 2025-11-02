@@ -38,21 +38,20 @@ NVIDIA A100 80 GB GPU • CUDA 12.9 • TensorRT-LLM v0.20.0
 └── .gitignore
 
 
-## ⚙️ Environment Setup
+⚙️ Environment Setup
 1️⃣ Start Container
-
 docker run --gpus all -it --rm \
   --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
   -v /home/shadeform/projects/llm-trtllm:/workspace/llm-trtllm \
   nvcr.io/nvidia/tensorrt-llm/release:latest
 
-2️⃣ Install Dependencies
 
+2️⃣ Install Dependencies
 cd /workspace/llm-trtllm
 pip install --upgrade huggingface_hub transformers accelerate
 
-📥 Download Model Weights
 
+📥 Download Model Weights
 from huggingface_hub import snapshot_download
 snapshot_download(
     repo_id="Qwen/Qwen2.5-7B-Instruct",
@@ -60,8 +59,8 @@ snapshot_download(
     local_dir_use_symlinks=False
 )
 
-🔄 Convert HF → TRT-LLM Checkpoints
 
+🔄 Convert HF → TRT-LLM Checkpoints
 bash scripts/01_convert_qwen.sh
 ✅ Outputs to /workspace/llm-trtllm/checkpoints/qwen2.5-7b/
 
@@ -74,9 +73,7 @@ bash scripts/03_build_fp16_inflight_a100.sh
 
 🧠 Benchmark Run
 PYTHONPATH="" python3 scripts/benchmark.py
-
 The benchmark measures:
-
 -TTFT (Time to First Token)
 -Total Latency
 -Throughput (Tokens per Second)
